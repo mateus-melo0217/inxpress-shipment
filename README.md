@@ -26,16 +26,3 @@ Once the application's Docker containers have been started, you can access the a
 ```
 http://localhost:3001
 ```
-
-# User
-```
-Username: pedrorosa
-Password: Pedro@123
-```
-
-# Admin
-```
-Franchise#: 100
-Username: phuongah
-Password: Phuong@03021979
-```
