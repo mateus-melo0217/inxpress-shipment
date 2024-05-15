@@ -1,0 +1,75 @@
+//@use "../abstract/" as *;
+//
+//// !General dropdownmenu box with flags
+//
+//.select {
+//  border: none;
+//  margin-top: 1rem;
+//  padding: 0.8rem 1.2rem;
+//  border-radius: 0.4rem;
+//  border: 1px solid var(--light-gray);
+//  appearance: none;
+//  background-color: transparent;
+//  --webkit-appearance: none;
+//  --moz-appearance: none;
+//  //background-image: url(/images/Icon-caret-down.svg);
+//  background-repeat: no-repeat;
+//  background-position: right 1rem top 50%;
+//  background-size: 1rem;
+//  padding-right: 6rem;
+//  position: relative;
+//  width: 17.5rem;
+//  text-align: left;
+//  &:focus,
+//  &:hover {
+//    outline: none;
+//    cursor: pointer;
+//    border-color: var(--blue);
+//  }
+//
+//  //   &:active,
+//  //   &:focus  ~ .options{
+//
+//  //         opacity: 1;
+//  //         visibility: visible;
+//  //   }
+//}
+//
+//.options {
+//  background-color: #fcfcfc;
+//  padding: 1rem 0;
+//  border: 1px solid var(--light-gray);
+//  cursor: pointer;
+//  border-radius: 0.5rem;
+//  position: absolute;
+//  width: 17.5rem;
+//  opacity: 0;
+//  visibility: hidden;
+//  transition: top 1s;
+//  column-gap: 0.5rem;
+//  a {
+//    text-decoration: none;
+//    color: inherit;
+//    list-style: none;
+//    display: flex;
+//    align-items: center;
+//    padding: 0.4rem 1rem;
+//    justify-content: space-between;
+//
+//    &:hover {
+//      background-color: var(--light-gray);
+//    }
+//    img {
+//      margin-left: 1rem;
+//      width: 2.5rem;
+//      height: 1.5rem;
+//    }
+//  }
+//}
+//
+//.visibleOption {
+//  transition: top 1s;
+//  top: 9.6rem;
+//  opacity: 1;
+//  visibility: visible;
+//}

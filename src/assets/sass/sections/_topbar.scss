@@ -1,0 +1,408 @@
+@use "../abstract/" as *;
+
+
+// * ==========================================
+// *
+// *   SE C T I O N     T O P    B A R
+// *
+// * ==========================================
+.header {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 0 2rem rgb(0 0 0 / 12%);
+  @include responsive(desktop) {
+    box-shadow: none;
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  &__right {
+    flex-wrap: wrap-reverse;
+    position: relative;
+    justify-self: end;
+  }
+
+  &__logo {
+    width: 14rem;
+  }
+}
+.input {
+  border-radius: 5px;
+  background: var(--field-background);
+  border: 1px solid var(--border-color);
+  padding: 1rem 2.4rem;
+  display: none;
+  @include responsive(tablet-port) {
+    display: flex;
+  }
+
+  &__tracking {
+    border: 0;
+    background-color: transparent;
+    font-family: inherit;
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__search {
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}
+// !Toggle icon switch freight and ship
+.toggle {
+  position: relative;
+  .switch {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    left: -9000px;
+    top: -9000px;
+    z-index: 0;
+    & + #circle {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 9.8rem;
+        height: 4.1rem;
+        background: #efefef;
+        border-radius: 10rem;
+        box-shadow: var(--inner-shadow);
+      }
+      &::after {
+        content: '';
+        width: 3.2rem;
+        height: 3.2rem;
+        background: var(--green);
+        filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.24));
+        border-radius: 10rem;
+        position: absolute;
+        right: 0.8rem;
+        transition: transform 0.3s linear;
+        z-index: 0;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 85%;
+    top: 45%;
+    height: 100%;
+    z-index: 100;
+
+    button:nth-child(1) {
+      margin-left: 1rem;
+
+      p {
+        transform: translateY(-1rem);
+      }
+    }
+    button:nth-child(2) {
+      margin-left: 2rem;
+      z-index: 100;
+
+      p {
+        margin-left: -1rem;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      svg {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+      path {
+        fill: #eaeaea;
+        z-index: 100;
+        opacity: 1;
+      }
+    }
+
+    &--box {
+      background-color: transparent;
+      border: 0;
+      svg {
+        width: 2em;
+        height: 2rem;
+        z-index: 100 !important;
+      }
+    }
+
+    &--text {
+      font-size: map-get($fontSize, fontSize-xs);
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+  .label-active {
+    &::after {
+      transform: translateX(-4.8rem);
+    }
+  }
+}
+// !Menu navigation
+.nav {
+  &__freight {
+    width: 100%;
+  }
+
+  &__ship {
+    position: absolute;
+    right: 0rem;
+    top: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    // transition: opacity 0.1s;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    gap: 1.4rem;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: map-get($fontSize, fontSize-m);
+    text-transform: capitalize;
+    white-space: nowrap;
+    position: relative;
+    color: inherit;
+
+    &:hover {
+      color: var(--green);
+    }
+
+    .active  {
+      color: var(--green);
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--green);
+    }
+
+  }
+  .flag {
+    display: none;
+  }
+
+  .menu-icon {
+    border: 0;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+
+    img {
+      width: 100%;
+    }
+    @include responsive(desktop) {
+      display: none;
+    }
+  }
+
+  .active-link {
+    a {
+      color: var(--green);
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--green);
+    }
+  }
+}
+
+.links {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 9rem;
+  left: -2px;
+  width: 100%;
+  background: #f7f7f7;
+  align-items: flex-end;
+  padding: 2rem;
+  transition: top 0.4s ease;
+
+  @include responsive(desktop) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    align-items: flex-end;
+    background: transparent;
+    width: auto;
+    padding: 0;
+    //
+  }
+}
+
+// !Navigation bell dropBox menu
+
+// !topheader
+.notification {
+  width: 248px;
+  height: 306px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  top: 6.2rem;
+  left: -186px;
+
+  @include responsive(desktop) {
+    top: 4.2rem;
+    left: unset;
+    right: 60px;
+  }
+  &__header {
+    border-bottom: 1px solid var(--blue);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+    span {
+      font-weight: 600;
+      font-size: map-get($fontSize, fontSize-s);
+    }
+
+    &__right {
+      span:nth-child(2) {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__content {
+    padding: 2rem 1rem;
+    display: grid;
+    row-gap: 2rem;
+    height: 30rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--light-gray);
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      padding-bottom: 1rem;
+      align-items: center;
+
+      img:nth-child(1) {
+        align-self: start;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px dashed;
+      }
+
+      // border-bottom: 1px dashed var(--light-gray);
+
+      &__message {
+        font-weight: 500;
+        font-size: map-get($fontSize, fontSize-s);
+        padding: 0 1rem;
+
+        p {
+          margin-bottom: 0;
+
+          @include responsive(desktop) {
+            padding-right: 3rem;
+          }
+        }
+        small {
+          font-style: italic;
+          color: var(--light-gray);
+          text-transform: uppercase;
+        }
+      }
+
+      &__action {
+        margin-left: -2.5rem;
+        &__tooltip {
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+          div:nth-child(1) .tooltip-text {
+            top: -4.2rem;
+            left: -2.3rem;
+            visibility: hidden;
+            opacity: 0;
+            &::before {
+              border-top-color: var(--blue);
+              top: 3rem;
+              left: 1.5rem;
+            }
+          }
+
+          div:nth-child(1):hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+          }
+
+          div:nth-child(2) .tooltip-text {
+            top: 2.7rem;
+            left: -2.6rem;
+            visibility: hidden;
+            opacity: 0;
+            &::before {
+              border-bottom-color: var(--blue);
+              top: -2rem;
+              left: 1.8rem;
+            }
+          }
+
+          div:nth-child(2):hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+          }
+          &--text {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.2rem;
+          }
+
+          .tooltip-text {
+            position: absolute;
+            line-height: 1.2rem;
+            white-space: nowrap;
+            color: #fff;
+            background-color: var(--blue);
+            padding: 0.7rem 0.8rem;
+            border-radius: 10rem;
+            text-align: center;
+
+            transition: opacity 0.4s ease;
+            &::before {
+              content: '';
+              position: absolute;
+              border: 1.5rem solid transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

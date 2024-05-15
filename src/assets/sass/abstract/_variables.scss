@@ -1,0 +1,103 @@
+@use "../abstract/mixin" as *;
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,300,500,700italic');
+:root {
+  --blue: rgba(12, 33, 76, 1);
+  --green: rgba(22,121,121);
+  --light-gray: rgb(187, 187, 187);
+  --medium-gray: hsl(0, 0%, 44%);
+  --field-background: rgb(240, 240, 240);
+  --border-color: rgb(206, 206, 206);
+  --red: hsl(354, 70%, 54%);
+  --main-font: 'Roboto', sans-serif;
+  --inner-shadow: inset 0px 3px 5px rgb(0 0 50 / 17%);
+  --box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.08);
+}
+
+$html: 55.5%;
+$fontSize: (
+  'fontSize-m': 1.9rem,
+  'fontSize-s': 1.6rem,
+  'fontSize-xs': 1.3rem,
+  'fontSize-s2': 1.1rem,
+  'title-section': 1.9rem,
+  'title-box': 2rem,
+);
+$fontWeight: (
+  'extra-bold': 900,
+  'medium': 500,
+);
+
+$widthField: (
+  small: 10rem,
+);
+
+// Different Variables and classes
+// !Special class for display some components
+.responsive-display {
+  display: block !important;
+  margin-bottom: 1rem;
+  width: 98%;
+  @include responsive(tablet-port) {
+    display: none !important;
+  }
+}
+
+.visibility {
+  top: 7rem;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  @include responsive(desktop) {
+    top: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+.flags {
+  display: none;
+  @include responsive(tablet-port) {
+    display: block;
+  }
+}
+
+.active-icon {
+  &:focus,
+  &:active,
+  &:valid {
+    svg path {
+      stroke: rgb(255, 255, 255);
+    }
+  }
+}
+
+.no-active-icon {
+  svg {
+    width: 2.3rem;
+    height: 2.3rem;
+    path {
+      fill: hsl(0, 0%, 85%) !important;
+    }
+  }
+}
+
+.visible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.text-small {
+  opacity: 0 !important;
+  transform: translateY(-1rem);
+}
+
+.dividerHorizontal {
+  display: none;
+  @include responsive(desktop) {
+    display: block;
+    border-bottom: 1px dashed var(--light-gray);
+    width: 100%;
+
+    height: 1px;
+    margin-top: -2rem;
+  }
+}

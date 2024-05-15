@@ -1,0 +1,3 @@
+
+export const UPDATE_AUTHINFO = 'UPDATE_AUTHINFO';
+export const CLEAR_AUTHINFO = 'CLEAR_AUTHINFO';

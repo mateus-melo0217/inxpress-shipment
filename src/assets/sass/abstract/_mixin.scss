@@ -1,0 +1,38 @@
+@mixin responsive($breakpoint) {
+  @if $breakpoint == Xlarge {
+    @media (min-width: 93.75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == Mlarge {
+    @media (min-width: 87.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == large {
+    @media (min-width: 81.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-land {
+    @media (min-width: 61.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-port {
+    @media (min-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile-land {
+    @media (min-width: 39em) {
+      @content;
+    }
+  }
+}

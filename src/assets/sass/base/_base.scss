@@ -1,0 +1,37 @@
+@use "../abstract/" as *;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $html;
+
+  @include responsive(desktop) {
+    font-size: 48.5%;
+  }
+
+  @include responsive(large) {
+    font-size: 50.5%;
+  }
+}
+
+body {
+  width: 100%;
+  font-family: var(--main-font);
+  color: var(--blue);
+  font-size: map-get($fontSize, fontSize-s);
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

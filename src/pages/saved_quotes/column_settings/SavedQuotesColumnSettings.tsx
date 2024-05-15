@@ -1,0 +1,18 @@
+export const savedQuotesColumnSettings = [
+    {column:"actions",             is_active: true,    disable_hide: true,     label: 'Actions'},
+    {column:"quoteId",             is_active: true,    disable_hide: true,     label: 'Quote ID'},
+    {column:"providerQuoteId",     is_active: true,    disable_hide: false,    label: 'Provider Quote ID'},
+    {column:"quoteNumber",         is_active: true,    disable_hide: false,    label: 'Carrier Quote Number'},
+    {column:"carrier",             is_active: true,    disable_hide: false,    label: 'Carrier'},
+    {column:"price",               is_active: true,    disable_hide: false,    label: 'Price'},
+    {column:"service",             is_active: true,    disable_hide: false,    label: 'Service'},
+    {column:"transitTime",         is_active: true,    disable_hide: false,    label: 'Est. Transit Time'},
+    {column:"handlingUnits",       is_active: true,    disable_hide: false,    label: 'Handling Units'},
+    {column:"insurance",           is_active: true,    disable_hide: false,    label: 'Insurance'},
+    {column:"date",                is_active: true,    disable_hide: false,    label: 'Date'},
+    {column:"origin",              is_active: true,    disable_hide: false,    label: 'Origin'},
+    {column:"destination",         is_active: true,    disable_hide: false,    label: 'Destination'},
+    {column:"dims",                is_active: true,    disable_hide: false,    label: 'Dims'},
+    {column:"weight",              is_active: true,    disable_hide: false,    label: 'Weight'},
+    {column:"accessorial",         is_active: true,    disable_hide: false,    label: 'Accessorial(s) Requested'},
+]

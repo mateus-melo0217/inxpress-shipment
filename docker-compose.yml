@@ -1,0 +1,16 @@
+version: '3'
+services:
+    freight:
+      image: "node:16.15.0"
+      user: "node"
+      working_dir: /app
+      volumes:
+        - ./:/app
+      networks:
+        - inxpress
+      ports:
+        - "3001:3000"
+      command: "npm start"
+networks:
+    inxpress:
+        driver: bridge

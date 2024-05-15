@@ -1,0 +1,13 @@
+.react-calendar__navigation {
+    background-color: var(--light-gray);
+}
+.react-calendar__month-view__weekdays {
+    background-color: var(--green);
+    margin-top: -15px;
+}
+.react-date-picker__clear-button{
+    display: none;
+}
+.react-date-picker__wrapper {
+    border: 0;
+}
