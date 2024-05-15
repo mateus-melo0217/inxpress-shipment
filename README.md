@@ -26,3 +26,4 @@ Once the application's Docker containers have been started, you can access the a
 ```
 http://localhost:3001
 ```
+
