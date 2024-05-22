@@ -8,6 +8,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+// Render the App component wrapped in the Provider component
 root.render(
     <Provider store={store}>
       <App />
